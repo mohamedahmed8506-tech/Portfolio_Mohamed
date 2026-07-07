@@ -1,0 +1,415 @@
+/* ============================================
+   Responsive Styles — Mohamed Ahmed Portfolio
+   Breakpoints: Desktop, Laptop, Tablet, Mobile
+   ============================================ */
+
+/* ---------- Large Laptop (≤ 1200px) ---------- */
+@media screen and (max-width: 1200px) {
+  :root {
+    --section-padding: 80px;
+  }
+
+  .testimonial-slider__arrow--prev {
+    left: -20px;
+  }
+
+  .testimonial-slider__arrow--next {
+    right: -20px;
+  }
+}
+
+/* ---------- Laptop / Tablet Landscape (≤ 1024px) ---------- */
+@media screen and (max-width: 1024px) {
+  .nav__link {
+    padding: 8px 10px;
+    font-size: 0.8125rem;
+  }
+
+  .nav__link--cta {
+    padding: 8px 14px;
+    margin-left: 4px;
+  }
+
+  .home__container {
+    gap: 40px;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services__grid .service-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .testimonial-slider__arrow--prev {
+    left: 0;
+  }
+
+  .testimonial-slider__arrow--next {
+    right: 0;
+  }
+}
+
+/* ---------- Tablet (≤ 768px) ---------- */
+@media screen and (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+    --section-padding: 64px;
+  }
+
+  /* Disable custom cursor on touch devices */
+  body.custom-cursor {
+    cursor: auto;
+  }
+
+  body.custom-cursor a,
+  body.custom-cursor button {
+    cursor: pointer;
+  }
+
+  .cursor,
+  .cursor-follower,
+  .mouse-glow {
+    display: none !important;
+  }
+
+  /* Mobile Navigation */
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(320px, 85vw);
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    padding: 80px 32px 40px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-left: 1px solid var(--glass-border);
+    box-shadow: var(--soft-shadow-lg);
+    transition: right var(--transition-base);
+    z-index: 1000;
+  }
+
+  .nav__menu.open {
+    right: 0;
+  }
+
+  .nav__link {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  .nav__link--cta {
+    margin-left: 0;
+    margin-top: 8px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .theme-toggle {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  /* Home */
+  .home__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .home__image-wrapper {
+    order: -1;
+  }
+
+  .home__image {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .home__quote {
+    text-align: left;
+    padding-left: 16px;
+  }
+
+  .home__buttons {
+    justify-content: center;
+  }
+
+  /* About */
+  .about__container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about__image-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about__stats {
+    justify-content: center;
+  }
+
+  /* Skills */
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Projects */
+  .projects__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Services */
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services__grid .service-card:last-child {
+    max-width: none;
+  }
+
+  /* Testimonials */
+  .testimonial-slider__arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+  }
+
+  .testimonial-slider__arrow--prev {
+    left: -8px;
+  }
+
+  .testimonial-slider__arrow--next {
+    right: -8px;
+  }
+
+  .testimonial-card {
+    padding: 28px 20px;
+  }
+
+  /* Contact */
+  .contact-btn {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .contact-btn__value {
+    font-size: 0.875rem;
+    word-break: break-all;
+  }
+
+  /* Back to top */
+  .back-to-top {
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ---------- Mobile (≤ 480px) ---------- */
+@media screen and (max-width: 480px) {
+  :root {
+    --section-padding: 48px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section__title {
+    margin-bottom: 40px;
+  }
+
+  .home {
+    padding-top: calc(var(--header-height) + 24px);
+  }
+
+  .home__name {
+    font-size: 2.25rem;
+  }
+
+  .home__buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home__buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home__image {
+    max-width: 280px;
+  }
+
+  .about__stat {
+    min-width: 80px;
+    padding: 16px 12px;
+  }
+
+  .about__stat-number {
+    font-size: 1.375rem;
+  }
+
+  .timeline {
+    padding-left: 32px;
+  }
+
+  .timeline__card {
+    padding: 24px 20px;
+  }
+
+  .coursework__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .skill-card {
+    padding: 24px 12px;
+  }
+
+  .skill-card__icon {
+    font-size: 2.25rem;
+  }
+
+  .project-card__image {
+    height: 180px;
+  }
+
+  .project-card__body {
+    padding: 20px;
+  }
+
+  .testimonial-slider__track {
+    min-height: 360px;
+  }
+
+  .testimonial-slider__arrow {
+    display: none;
+  }
+
+  .service-card {
+    padding: 28px 20px;
+  }
+
+  .contact-btn__icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.125rem;
+  }
+
+  .footer__social-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .blob--1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .blob--2 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .blob--3 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ---------- Small Mobile (≤ 360px) ---------- */
+@media screen and (max-width: 360px) {
+  .nav__menu {
+    width: 100vw;
+    right: -100vw;
+  }
+
+  .home__name {
+    font-size: 2rem;
+  }
+
+  .skills__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .floating,
+  .blob,
+  .bg-gradient {
+    animation: none;
+  }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  .loader,
+  .scroll-progress,
+  .cursor,
+  .cursor-follower,
+  .mouse-glow,
+  .bg-gradient,
+  .bg-blobs,
+  .particles,
+  .header,
+  .back-to-top,
+  .theme-toggle {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .section {
+    page-break-inside: avoid;
+    padding: 24px 0;
+  }
+}

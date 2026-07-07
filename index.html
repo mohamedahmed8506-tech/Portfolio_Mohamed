@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohamed Ahmed - Data Analyst & BI Fresh Graduate. Portfolio showcasing data analysis, business intelligence, and dashboard projects.">
+  <meta name="keywords" content="Data Analyst, Business Intelligence, Power BI, SQL, Python, Mohamed Ahmed">
+  <meta name="author" content="Mohamed Ahmed">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mohamed Ahmed | Data Analyst Portfolio">
+  <meta property="og:description" content="Fresh graduate Data Analyst specializing in BI, dashboards, and data-driven business insights.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mohamedahmed.dev">
+  <meta property="og:image" content="assets/images/home.jpg">
+
+  <title>Mohamed Ahmed | Data Analyst Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Devicon & Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__content">
+      <div class="loader__logo">MA</div>
+      <div class="loader__bar">
+        <div class="loader__progress"></div>
+      </div>
+      <p class="loader__text">Loading Portfolio...</p>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- Mouse Glow Effect -->
+  <div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
+
+  <!-- Animated Background -->
+  <div class="bg-gradient" aria-hidden="true"></div>
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob--1"></div>
+    <div class="blob blob--2"></div>
+    <div class="blob blob--3"></div>
+  </div>
+  <canvas class="particles" id="particles" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="nav__logo" aria-label="Mohamed Ahmed Home">
+        <span class="nav__logo-text">MA</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#home" class="nav__link active">Home</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#education" class="nav__link">Education</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#feedback" class="nav__link">Feedback</a></li>
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta">Get In Touch</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon theme-toggle__icon theme-toggle__icon--moon"></i>
+        <i class="fas fa-sun theme-toggle__icon theme-toggle__icon--sun"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HOME Section -->
+    <section class="home section" id="home">
+      <div class="container home__container">
+        <div class="home__content reveal">
+          <p class="home__greeting">Hello, I'm</p>
+          <h1 class="home__name">Mohamed Ahmed</h1>
+          <h2 class="home__title">
+            <span class="typing-text" id="typingText"></span>
+            <span class="typing-cursor">|</span>
+          </h2>
+          <blockquote class="home__quote">
+            "I'm a freshly graduated Data Analyst who lives at the intersection of business strategy and technology.
+            My background in Business Information Systems gives me a unique edge—I don't just crunch numbers; I understand what they mean for marketing, finance, and operations.
+            I use modern BI tools to build interactive dashboards and tell compelling stories with data.
+            I'm looking for a team where I can grow, contribute, and turn complex datasets into clear business recommendations."
+          </blockquote>
+          <div class="home__buttons">
+            <a href="assets/cv/cv.pdf" class="btn btn--primary ripple" download aria-label="Download my CV">
+              <i class="fas fa-download" aria-hidden="true"></i>
+              My CV
+            </a>
+            <a href="#projects" class="btn btn--outline ripple" aria-label="View my projects">
+              <i class="fas fa-folder-open" aria-hidden="true"></i>
+              View Projects
+            </a>
+          </div>
+        </div>
+        <div class="home__image-wrapper reveal reveal--delay">
+          <div class="home__image-frame floating">
+            <img
+              src="assets\images/image.jpeg"
+              alt="Mohamed Ahmed - Data Analyst portrait"
+              class="home__image"
+              loading="lazy"
+              width="480"
+              height="560"
+            >
+            <div class="home__image-glow" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT Section -->
+    <section class="about section" id="about">
+      <div class="container">
+        <h2 class="section__title reveal">About <span class="section__title-accent">Me</span></h2>
+        <div class="about__container">
+          <div class="about__image-wrapper reveal">
+            <div class="about__image-frame">
+              <img
+                src="assets\images/image.jpeg"
+                alt="Mohamed Ahmed working on data analysis"
+                class="about__image"
+                loading="lazy"
+                width="440"
+                height="520"
+              >
+            </div>
+          </div>
+          <div class="about__content reveal reveal--delay">
+            <p class="about__text">
+              Hi, I'm <strong>Mohamed Ahmed</strong> — a Business Information Systems graduate and an aspiring Data Analyst.
+            </p>
+            <p class="about__text">
+              I combine analytical thinking with business acumen to turn raw data into meaningful stories.
+            </p>
+            <p class="about__text">
+              Skilled in SQL, Python, Excel, and data visualization tools, I'm eager to help organizations make data-driven decisions.
+            </p>
+            <p class="about__text about__text--highlight">
+              Let's turn your data into value.
+            </p>
+            <div class="about__stats">
+              <div class="about__stat glass-card">
+                <span class="about__stat-number">8+</span>
+                <span class="about__stat-label">Skills</span>
+              </div>
+              <div class="about__stat glass-card">
+                <span class="about__stat-number">2+</span>
+                <span class="about__stat-label">Projects</span>
+              </div>
+              <div class="about__stat glass-card">
+                <span class="about__stat-number">2026</span>
+                <span class="about__stat-label">Graduate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION Section -->
+    <section class="education section" id="education">
+      <div class="container">
+        <h2 class="section__title reveal"><span class="section__title-accent">Education</span></h2>
+        <div class="timeline">
+          <div class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__card glass-card floating-card">
+              <div class="timeline__icon">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+              </div>
+              <h3 class="timeline__degree">Bachelor of Business Information Systems (BIS)</h3>
+              <p class="timeline__institution">Higher Institute of Technology – El-Obour</p>
+              <div class="timeline__details">
+                <div class="timeline__detail">
+                  <span class="timeline__label">Grade:</span>
+                  <span class="timeline__value">Very Good</span>
+                </div>
+                <div class="timeline__detail">
+                  <span class="timeline__label">Graduation Year:</span>
+                  <span class="timeline__value">2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="coursework reveal">
+          <h3 class="coursework__title">Relevant Coursework</h3>
+          <ul class="coursework__grid">
+            <li class="coursework__item glass-card">Database Management Systems</li>
+            <li class="coursework__item glass-card">Data Analysis &amp; Visualization</li>
+            <li class="coursework__item glass-card">Business Intelligence</li>
+            <li class="coursework__item glass-card">Systems Analysis &amp; Design</li>
+            <li class="coursework__item glass-card">E-Commerce</li>
+            <li class="coursework__item glass-card">Financial Accounting</li>
+            <li class="coursework__item glass-card">Marketing Information Systems</li>
+            <li class="coursework__item glass-card">Programming (Python / SQL)</li>
+            <li class="coursework__item glass-card">ERP Systems</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS Section -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <h2 class="section__title reveal">My <span class="section__title-accent">Skills</span></h2>
+        <div class="skills__grid">
+
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="devicon-mysql-plain colored" aria-hidden="true"></i>
+            </div>
+            <h3 class="skill-card__name">SQL</h3>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="devicon-python-plain colored" aria-hidden="true"></i>
+            </div>
+            <h3 class="skill-card__name">Python</h3>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="fas fa-chart-pie" aria-hidden="true"></i>
+            </div>
+            <h3 class="skill-card__name">Power BI</h3>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="fas fa-cubes" aria-hidden="true"></i>
+            </div>
+            <h3 class="skill-card__name">ODOO</h3>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="devicon-html5-plain colored" aria-hidden="true"></i>
+            </div>
+            <h3 class="skill-card__name">HTML</h3>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="devicon-css3-plain colored" aria-hidden="true"></i>
+            </div>
+            <h3 class="skill-card__name">CSS</h3>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
+            </div>
+            <h3 class="skill-card__name">JavaScript</h3>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="devicon-cplusplus-plain colored" aria-hidden="true"></i>
+            </div>
+            <h3 class="skill-card__name">C++</h3>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS Section -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <h2 class="section__title reveal">Featured <span class="section__title-accent">Projects</span></h2>
+        <div class="projects__grid">
+
+          <article class="project-card reveal floating-card">
+            <div class="project-card__image">
+              <div class="project-card__placeholder" aria-hidden="true">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">E-Commerce Store</h3>
+              <p class="project-card__desc">Analysis Data for E-Commerce Store</p>
+              <div class="project-card__tools">
+                <span class="project-card__tools-label">Tools:</span>
+                <span class="project-card__tag">Power BI</span>
+                <span class="project-card__tag">Excel</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal reveal--delay floating-card">
+            <div class="project-card__image">
+              <div class="project-card__placeholder project-card__placeholder--dental" aria-hidden="true">
+                <i class="fas fa-tooth"></i>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">El-Zahraa Dental Company</h3>
+              <p class="project-card__desc">ERP System for Dental Company</p>
+              <div class="project-card__tools">
+                <span class="project-card__tools-label">Tools:</span>
+                <span class="project-card__tag">ODOO</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEEDBACK Section -->
+    <section class="feedback section" id="feedback">
+      <div class="container">
+        <h2 class="section__title reveal">Client <span class="section__title-accent">Feedback</span></h2>
+
+        <div class="testimonial-slider reveal" id="testimonialSlider">
+          <button class="testimonial-slider__arrow testimonial-slider__arrow--prev" id="sliderPrev" aria-label="Previous testimonial">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+
+          <div class="testimonial-slider__track" id="sliderTrack">
+            <div class="testimonial-slide active" data-index="0">
+              <div class="testimonial-card glass-card">
+                <div class="testimonial-card__avatar">SA</div>
+                <div class="testimonial-card__rating" aria-label="5 out of 5 stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-card__text">"Mohamed delivered an exceptional Power BI dashboard that transformed how we track sales. His ability to translate business needs into clear visualizations is outstanding."</p>
+                <h4 class="testimonial-card__name">Sarah Ahmed</h4>
+                <p class="testimonial-card__role">Marketing Manager, Retail Co.</p>
+              </div>
+            </div>
+
+            <div class="testimonial-slide" data-index="1">
+              <div class="testimonial-card glass-card">
+                <div class="testimonial-card__avatar">OK</div>
+                <div class="testimonial-card__rating" aria-label="5 out of 5 stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-card__text">"Working with Mohamed on our ERP implementation was seamless. He understood our dental clinic workflow and configured ODOO perfectly for our operations."</p>
+                <h4 class="testimonial-card__name">Omar Khalil</h4>
+                <p class="testimonial-card__role">CEO, El-Zahraa Dental</p>
+              </div>
+            </div>
+
+            <div class="testimonial-slide" data-index="2">
+              <div class="testimonial-card glass-card">
+                <div class="testimonial-card__avatar">LM</div>
+                <div class="testimonial-card__rating" aria-label="4 out of 5 stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                </div>
+                <p class="testimonial-card__text">"His SQL skills and attention to detail helped us clean years of messy data. Mohamed is a rising talent in the analytics space."</p>
+                <h4 class="testimonial-card__name">Layla Mahmoud</h4>
+                <p class="testimonial-card__role">Data Engineer, TechStart</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="testimonial-slider__arrow testimonial-slider__arrow--next" id="sliderNext" aria-label="Next testimonial">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
+
+          <div class="testimonial-slider__dots" id="sliderDots" role="tablist" aria-label="Testimonial navigation"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES Section -->
+    <section class="services section" id="services">
+      <div class="container">
+        <h2 class="section__title reveal">My <span class="section__title-accent">Services</span></h2>
+        <div class="services__grid">
+
+          <article class="service-card glass-card reveal floating-card">
+            <div class="service-card__icon">
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
+            </div>
+            <h3 class="service-card__title">Data Analysis &amp; Reporting</h3>
+            <ul class="service-card__list">
+              <li>Collecting, cleaning, and organizing raw data</li>
+              <li>Exploratory Data Analysis</li>
+              <li>Business Reports</li>
+              <li>Statistical Analysis</li>
+            </ul>
+          </article>
+
+          <article class="service-card glass-card reveal reveal--delay floating-card">
+            <div class="service-card__icon">
+              <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+            </div>
+            <h3 class="service-card__title">Business Intelligence &amp; Dashboards</h3>
+            <ul class="service-card__list">
+              <li>Power BI</li>
+              <li>Tableau</li>
+              <li>KPIs</li>
+              <li>Interactive Dashboards</li>
+              <li>Automated Reports</li>
+            </ul>
+          </article>
+
+          <article class="service-card glass-card reveal floating-card">
+            <div class="service-card__icon">
+              <i class="fas fa-database" aria-hidden="true"></i>
+            </div>
+            <h3 class="service-card__title">Database Management &amp; SQL</h3>
+            <ul class="service-card__list">
+              <li>Complex SQL Queries</li>
+              <li>Database Design</li>
+              <li>Optimization</li>
+              <li>Power BI Integration</li>
+              <li>Python Integration</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GET IN TOUCH Section -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <h2 class="section__title reveal">Get In <span class="section__title-accent">Touch</span></h2>
+        <p class="contact__subtitle reveal">Ready to turn your data into actionable insights? Let's connect.</p>
+
+        <div class="contact__grid">
+          <a href="https://wa.me/201282982192" class="contact-btn glass-card reveal ripple" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
+            <div class="contact-btn__icon contact-btn__icon--whatsapp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </div>
+            <div class="contact-btn__info">
+              <span class="contact-btn__label">WhatsApp</span>
+              <span class="contact-btn__value">01282982192</span>
+            </div>
+            <i class="fas fa-arrow-right contact-btn__arrow" aria-hidden="true"></i>
+          </a>
+
+          <a href="mailto:mohamedahmed8506@gmail.com" class="contact-btn glass-card reveal reveal--delay ripple" aria-label="Send email to Mohamed Ahmed">
+            <div class="contact-btn__icon contact-btn__icon--email">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </div>
+            <div class="contact-btn__info">
+              <span class="contact-btn__label">Email</span>
+              <span class="contact-btn__value">mohamedahmed8506@gmail.com</span>
+            </div>
+            <i class="fas fa-arrow-right contact-btn__arrow" aria-hidden="true"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/mohamed-ahmed291?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="contact-btn glass-card reveal ripple" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
+            <div class="contact-btn__icon contact-btn__icon--linkedin">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </div>
+            <div class="contact-btn__info">
+              <span class="contact-btn__label">LinkedIn</span>
+              <span class="contact-btn__value">mohamed-ahmed291</span>
+            </div>
+            <i class="fas fa-arrow-right contact-btn__arrow" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__brand">
+        <h3 class="footer__name">Mohamed Ahmed</h3>
+        <p class="footer__title">Data Analyst | BI Fresh Graduate</p>
+      </div>
+
+      <div class="footer__social">
+        <a href="https://wa.me/201282982192" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:mohamedahmed8506@gmail.com" class="footer__social-link" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/mohamed-ahmed291?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+        </a>
+        <a href="assets/cv/cv.pdf" class="footer__social-link" download aria-label="Download CV">
+          <i class="fas fa-file-pdf" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <p class="footer__copy">&copy; 2026 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Back To Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
